@@ -1,7 +1,5 @@
 <?php
-function gallery(){
-	//in future versions, add the directory to the arguments for the function
-	$directory = 'img/gallery';
+function gallery($directory){
 	/* step one:  read directory, make array of images */
 	if ($handle = opendir($directory)) {  
 		while (false !== ($file = readdir($handle)))  
