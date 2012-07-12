@@ -1,5 +1,6 @@
 <?php
-function gallery($directory,$display_type = 'slideshow'){
+function gallery($directory = 'images/gallery', $display_type = 'all-the-way'){
+	echo "<div class='slideshow'>";
 	/* step one:  read directory, make array of images */
 	if ($handle = opendir($directory)) {
 		while (false !== ($file = readdir($handle))){
@@ -19,6 +20,9 @@ function gallery($directory,$display_type = 'slideshow'){
 			$caption = str_replace('-',' ',$caption);
 			$caption = ucfirst(str_replace('_',' ',$caption));
 			switch($display_type){
+				case 'all-the-way':
+					echo "<div class='slide'><img src='$directory/$file' class='product' alt='$caption' /></a><h2 class='caption'>$caption</h2><div class='pager'></div></div>";
+					break;
 				case 'thumbnails':
 					echo "<a href='$directory/$file'><img src='$directory/$file' class='product' alt='$caption' /></a>";
 					break;
@@ -36,5 +40,6 @@ function gallery($directory,$display_type = 'slideshow'){
 	}else{
 		echo '<p>There are no images in this gallery.</p>';
 	}
+	echo "</div>";
 }
 ?>
