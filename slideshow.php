@@ -21,19 +21,19 @@ function gallery($directory = 'images/gallery', $display_type = 'all-the-way'){
 			$caption = ucfirst(str_replace('_',' ',$caption));
 			switch($display_type){
 				case 'all-the-way':
-					echo "<div class='slide'><img src='$directory/$file' class='product' alt='$caption' /></a><h2 class='caption'>$caption</h2><div class='pager'></div></div>";
+					echo "<div class='slide'><img src='$directory/$file' alt='$caption' /><h2 class='caption'>$caption</h2><div class='pager'></div></div>";
 					break;
 				case 'thumbnails':
-					echo "<a href='$directory/$file'><img src='$directory/$file' class='product' alt='$caption' /></a>";
+					echo "<a href='$directory/$file'><img src='$directory/$file' alt='$caption' /></a>";
 					break;
 				case 'slideshow':
-					echo "<div class='slide'><img src='$directory/$file' class='product' alt='$caption' /></a></div>";
+					echo "<div class='slide'><img src='$directory/$file' alt='$caption' /></div>";
 					break;
 				case 'captioned-slideshow':
-					echo "<div class='slide'><img src='$directory/$file' class='product' alt='$caption' /></a><h2 class='caption'>$caption</h2></div>";
+					echo "<div class='slide'><img src='$directory/$file' alt='$caption' /><h2 class='caption'>$caption</h2></div>";
 					break;
 				case 'list':
-					echo "<li><img src='$directory/$file' class='product' alt='$caption' /></a></li>";
+					echo "<li><img src='$directory/$file' alt='$caption' /></li>";
 					break;
 			}
 		}
